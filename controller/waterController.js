@@ -3,26 +3,26 @@ const { Contact } = require("../models/contactSchema");
 const addFields = async (req, res) => {
   try {
     const {
-      name,
+      firstName,
       lastName,
       number,
       email,
-      companyName,
-      typeOfBusiness,
-      advertise,
+      company,
+      businessType,
+      advertising,
       budget,
       message,
     } = req.body;
 
     const newContact = new Contact({
-      name,
+      firstName,
       lastName,
       number,
       email,
       details: {
-        companyName,
-        typeOfBusiness,
-        advertise,
+        company,
+        businessType,
+        advertising,
         budget,
         message,
       },

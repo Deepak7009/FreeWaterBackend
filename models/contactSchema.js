@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
 const contactSchema = new mongoose.Schema({
-  name: String,
+  firstName: String,
   lastName: String,
   number: Number,
   email: String,
   details: {
-    companyName: String,
-    typeOfBusiness: String,
-    advertise: String,
+    company: String,
+    businessType: String,
+    advertising: String,
     budget: String,
     message: String,
   },
