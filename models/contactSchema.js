@@ -5,6 +5,13 @@ const contactSchema = new mongoose.Schema({
   lastName: String,
   number: Number,
   email: String,
+  details: {
+    companyName: String,
+    typeOfBusiness: String,
+    advertise: String,
+    budget: String,
+    message: String,
+  },
 });
 
 const Contact = mongoose.model('ContactField', contactSchema);
