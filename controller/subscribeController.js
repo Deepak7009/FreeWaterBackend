@@ -2,18 +2,18 @@ require('dotenv').config();
 const { Subscribe } = require("../models/subscribeSchema");
 const nodemailer = require('nodemailer');
 
-const addCustomer = async (req, res) => {
+const addSubscriber = async (req, res) => {
   try {
     const { name, lastName, email, city } = req.body;
 
-    const newCustomer = new Subscribe({
+    const newSubscriber = new Subscribe({
       name,
       lastName,
       email,
       city
     });
 
-    await newCustomer.save();
+    await newSubscriber.save();
 
     const transporter = nodemailer.createTransport({
       service: 'gmail', 
@@ -40,7 +40,7 @@ const addCustomer = async (req, res) => {
 
     res.status(201).json({
       message: "Customer added successfully",
-      customer: newCustomer,
+      customer: newSubscriber,
     });
   } catch (error) {
     console.error("Error adding Subscribe:", error);
@@ -48,4 +48,4 @@ const addCustomer = async (req, res) => {
   }
 };
 
-module.exports = { addCustomer };
+module.exports = { addSubscriber };
